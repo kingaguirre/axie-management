@@ -34,8 +34,8 @@ export default () => {
   return (
     <SC.Container>
       {!data ? <SC.Loader/> : (
-          <Container>
-          <SC.CardInfoContainer>
+        <Container>
+          {/* <SC.CardInfoContainer>
             <AppContext.Consumer>
               {({slpPrice}) => (
                 <Row>
@@ -80,6 +80,7 @@ export default () => {
               )}
             </AppContext.Consumer>
           </SC.CardInfoContainer>
+           */}
           <SC.CardItemContainer>
             <Row>
               {!!data && !!data.length && data
@@ -89,7 +90,7 @@ export default () => {
                   return nameA !== nameB ? nameA < nameB ? -1 : 1 : 0;
                 })
                 .map((item: any, i: number) => (
-                <Col md={3} key={i}>
+                <Col xl={3} lg={4} md={6} key={i}>
                   <CardItem {...item}/>
                 </Col>
               ))}

@@ -11,15 +11,16 @@ export default (props: any) => {
   const { name, cache_last_updated, last_claim, total_slp, in_game_slp, mmr, share, rank, ronin } = props;
   
   const isManager = share === -1;
-  const totalIskoSlp: number = getTotalSlp(total_slp, isManager ? 100 : share);
+  const calculatedShare = getAvg(last_claim, in_game_slp) >= 125 ? 60 : 50;
+  const totalIskoSlp: number = getTotalSlp(total_slp, isManager ? 100 : calculatedShare);
 
   return (
     <SC.Container>
       <SC.ShareIcon
-        isQouta={isManager ? true : share > 50}
-        title={`Share ${isManager ? 100 : share}%`}
+        isQouta={isManager ? true : calculatedShare > 50}
+        title={`Share ${isManager ? 100 : calculatedShare}%`}
       >
-        {isManager ? 100 : share}%
+        {isManager ? 100 : calculatedShare}%
       </SC.ShareIcon>
       <SC.Header>
         <SC.Name>
@@ -62,7 +63,7 @@ export default (props: any) => {
         />
         <LabelValue
           label="Manager"
-          value={numberWithCommas(getTotalSlp(total_slp, isManager ? 100 : 100 - share))}
+          value={numberWithCommas(getTotalSlp(total_slp, isManager ? 100 : 100 - calculatedShare))}
           isReverse
         />
       </SC.Body>
