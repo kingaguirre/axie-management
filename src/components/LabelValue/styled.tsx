@@ -21,6 +21,13 @@ export const Container = styled.div<IContainer>`
     font-size: ${p => p.isLarge ? 10 : 8}px;
     width: 100%;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    > small {
+      margin-left: 5px;
+      font-size: 0.75em;
+      font-weight: 700;
+    }
   }
   ${p => p.isReverse ? `
     flex-direction: column-reverse;

@@ -40,7 +40,7 @@ export default () => {
             <Route path="/users">
               <Users />
             </Route> */}
-            <Route path="/">
+            <Route path="/:id?">
               <Dashboard />
             </Route>
           </Switch>
