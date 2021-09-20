@@ -25,8 +25,7 @@ export default () => {
 
   const fetchData = async (item: any) => {
     const response = await fetch(`https://game-api.axie.technology/api/v1/${item.ronin}`);
-    const responseNew = await fetch(`https://axie-scho-tracker-server.herokuapp.com/api/account/${item.ronin}`);
-    return {...await response.json(), ...await responseNew.json(), ...item};
+    return {...await response.json(), ...item};
   };
 
   useEffect(() => {

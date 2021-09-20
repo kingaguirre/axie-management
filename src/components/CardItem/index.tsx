@@ -8,13 +8,11 @@ import { numberWithCommas, getTotalSlp, getAvg, PHP_PREFIX, copyToClipboard, get
 import * as SC from './styled';
 
 export default (props: any) => {
-  const { name, cache_last_updated, last_claim, total_slp, in_game_slp, mmr, share, rank, ronin, slpData, leaderboardData } = props;
-  const { gameSlp, lastClaim, totalSlp, updatedOn } = slpData;
-  const { elo, rank: rankNew } = leaderboardData;
-  
+  const { name, cache_last_updated, last_claim, total_slp, in_game_slp, mmr, share, rank, ronin } = props;
+
   const isManager = share === -1;
-  const calculatedShare = getAvg(lastClaim || last_claim, gameSlp || in_game_slp) >= 125 ? 60 : 50;
-  const totalIskoSlp: number = getTotalSlp(totalSlp || total_slp, isManager ? 100 : calculatedShare);
+  const calculatedShare = getAvg(last_claim, in_game_slp) >= 125 ? 60 : 50;
+  const totalIskoSlp: number = getTotalSlp(total_slp, isManager ? 100 : calculatedShare);
 
   return (
     <SC.Container>
@@ -35,7 +33,7 @@ export default (props: any) => {
         </SC.Name>
         <LabelValue
           label="MMR"
-          value={elo || mmr}
+          value={mmr}
           align="right"
         />
       </SC.Header>
@@ -46,7 +44,7 @@ export default (props: any) => {
             {({slpPrice}) => (
               <LabelValue
                 label={`${PHP_PREFIX}${numberWithCommas(slpPrice * totalIskoSlp)}`}
-                labelSmall={`in ${getTotalDays(lastClaim || last_claim)} days`}
+                labelSmall={`in ${getTotalDays(last_claim)} days`}
                 value={numberWithCommas(totalIskoSlp)}
                 align="left"
                 isLarge
@@ -56,25 +54,25 @@ export default (props: any) => {
         </SC.Slp>
         <LabelValue
           label="Avg"
-          value={getAvg(lastClaim || last_claim, gameSlp || in_game_slp)}
+          value={getAvg(last_claim, in_game_slp)}
           isReverse
         />
         <LabelValue
           label="Total"
-          value={numberWithCommas(totalSlp || total_slp)}
+          value={numberWithCommas(total_slp)}
           isReverse
         />
         <LabelValue
           label="Manager"
-          value={numberWithCommas(getTotalSlp(totalSlp || total_slp, isManager ? 100 : 100 - calculatedShare))}
+          value={numberWithCommas(getTotalSlp(total_slp, isManager ? 100 : 100 - calculatedShare))}
           isReverse
         />
       </SC.Body>
       <SC.Footer>
-        <SC.UpdatedOn><TimeAgo date={updatedOn || cache_last_updated}/></SC.UpdatedOn>
+        <SC.UpdatedOn><TimeAgo date={cache_last_updated}/></SC.UpdatedOn>
           <LabelValue
             label="Rank"
-            value={`#${rankNew || rank}`}
+            value={`#${rank}`}
             align="right"
             isReverse
           />
