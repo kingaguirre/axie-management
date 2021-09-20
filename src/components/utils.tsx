@@ -87,3 +87,8 @@ export const copyToClipboard = (str: any) => {
   document.execCommand('copy');
   document.body.removeChild(el);
 };
+
+export const getQueryStringParams = (params: string) => {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(params);
+}

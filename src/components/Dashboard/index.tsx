@@ -10,7 +10,8 @@ import {
   getTotaDashboardlUnclaimedSlp,
   getTotaDashboardlClaimedSlp,
   getTotalIskoSlp,
-  getTotalManagerSlp
+  getTotalManagerSlp,
+  getQueryStringParams
 } from '../utils';
 import { AppContext } from '../../App';
 import ControlContainer from './ControlContainer';
@@ -21,7 +22,7 @@ export default () => {
   const [isAsc, setIsAsc] = useState<any>(true);
   const [sortBy, setSortBy] = useState<string>('name');
   const [searchText, setSearchText] = useState<string>('');
-  const { id } = useParams<{ id: string }>();
+  const isAdmin = getQueryStringParams('user') === 'admin';
 
   const fetchData = async (item: any) => {
     const response = await fetch(`https://game-api.axie.technology/api/v1/${item.ronin}`);
@@ -40,7 +41,7 @@ export default () => {
   return !data ? <SC.Loader/> : (
     <SC.Container>
       <Container>
-        {id === '0' && (
+        {isAdmin && (
           <SC.CardInfoContainer>
             <AppContext.Consumer>
               {({slpPrice}) => (
