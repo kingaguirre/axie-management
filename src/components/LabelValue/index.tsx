@@ -14,7 +14,7 @@ export default (props: IProps) => {
   return (
     <SC.Container isLarge={isLarge} isReverse={isReverse} align={align}>
       {value}
-      <p>{label} <small>{labelSmall}</small></p>
+      <p>{label} {labelSmall && <small>{labelSmall}</small>}</p>
     </SC.Container>
   )
 }

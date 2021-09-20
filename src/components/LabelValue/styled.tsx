@@ -19,6 +19,7 @@ export const Container = styled.div<IContainer>`
     opacity: 0.8;
     margin: ${p => p.isLarge ? -10 : -2}px 0;
     font-size: ${p => p.isLarge ? 10 : 8}px;
+    justify-content: ${p => !!p.align ? p.align === 'left' ? 'flex-start' : 'flex-end' : 'center'};
     width: 100%;
     white-space: nowrap;
     display: flex;

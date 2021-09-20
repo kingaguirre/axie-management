@@ -18,7 +18,7 @@ export const ShareIcon = styled.div<IShareIcon>`
   font-weight: 600;
   width: 8px;
   height: 8px;
-  background-color: ${p => p.isQouta ? 'var(--bs-teal)' : 'var(--bs-gray-400)'};
+  background-color: ${p => p.isQouta ? 'var(--bs-teal)' : 'var(--bs-yellow)'};
   color: ${p => p.isQouta ? 'white' : 'black'};
   border-radius: 0 50% 0;
   display: flex;
