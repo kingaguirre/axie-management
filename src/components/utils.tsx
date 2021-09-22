@@ -12,10 +12,21 @@ export const getTotalSlp = (slp: number, share: number) => {
 }
 
 export const getAvg = (last_claim: number, slp: number) => {
-  const now = DateTime.local();
-  const lastClaim = DateTime.fromMillis(last_claim * 1000);
-  return numberWithCommas(slp / Math.ceil(now.diff(lastClaim).shiftTo('days').toObject().days || 0));
+  const avg = slp / getTotalDays(last_claim);
+  if (!!avg) {
+    return numberWithCommas(Math.floor(slp / getTotalDays(last_claim)));
+  }
+  return 0;
 }
+
+export const getTotalDays = (last_claim: number) => {
+  if (!!last_claim) {
+    const now = DateTime.local();
+    const lastClaim = DateTime.fromMillis(last_claim * 1000);
+    return Math.ceil(now.diff(lastClaim).shiftTo('days').toObject().days || 0);
+  }
+  return 0;
+};
 
 export const getSlpAndPrice = (data: any, slpPrice: any, slpToGet: string) => {
   const totalAvg = !!data ? data.reduce((sum: number, cur: any) => 
@@ -65,3 +76,19 @@ export const getTotalManagerSlp = (data: any, slpPrice: any) => {
   };
 }
 
+export const copyToClipboard = (str: any) => {
+  const el = document.createElement('textarea');
+  el.value = str;
+  el.setAttribute('readonly', '');
+  el.style.position = 'absolute';
+  el.style.left = '-9999px';
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+};
+
+export const getQueryStringParams = (params: string) => {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(params);
+}

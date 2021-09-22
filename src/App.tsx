@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createContext } from 'react';
+import { useEffect, useState, createContext } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,7 +11,7 @@ import Header from './components/Header';
 import Dashboard from './components/Dashboard';
 
 export const AppContext = createContext<any>(undefined);
-
+const AVG_LIMIT = 125;
 export default () => {
   const [slpPrice, setSlpPrice] = useState<number>(0);
 
@@ -28,6 +28,7 @@ export default () => {
   return (
     <AppContext.Provider value={{
       slpPrice,
+      avgLimit: AVG_LIMIT,
     }}>
       <SC.MainContainer>
         <SC.GlobalStyle/>
@@ -49,4 +50,3 @@ export default () => {
     </AppContext.Provider>
   );
 }
-

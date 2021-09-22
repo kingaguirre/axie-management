@@ -6,8 +6,13 @@ export const HeaderContainer = styled.div`
       background-color: #36393f!important;
       border-bottom: 1px solid rgb(47, 49, 54);
       height: 52px;
+      padding: 0;
       a {
         text-decoration: none!important;
+      }
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 18px;
       }
       .nav-link {
         font-weight: 500;

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import * as SC from './styled';
 
 interface IProps {
