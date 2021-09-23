@@ -1,20 +1,20 @@
-
+import { ReactNode } from 'react';
 import * as SC from './styled';
 
 interface IProps {
   value: string | number;
   label: string;
-  labelSmall?: string;
+  labelSmall?: ReactNode;
   isReverse?: boolean;
-  isLarge?: boolean;
+  size?: 'small' | 'large' | undefined;
   align?: 'left' | 'right'
 }
 export default (props: IProps) => {
-  const { value, label, isReverse, align, isLarge, labelSmall } = props;
+  const { value, label, isReverse, align, labelSmall, size } = props;
   return (
-    <SC.Container isLarge={isLarge} isReverse={isReverse} align={align}>
+    <SC.Container size={size} isReverse={isReverse} align={align}>
       {value}
-      <p>{label} <small>{labelSmall}</small></p>
+      <p>{label} {!!labelSmall && <small>{labelSmall}</small>}</p>
     </SC.Container>
   )
 }

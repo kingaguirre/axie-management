@@ -1,8 +1,8 @@
 
-import { Link } from "react-router-dom";
 import { Navbar, Container, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import slp_img from '../../assets/slp.png';
-import { AppContext } from '../../App';
+import { AppContext } from '../Main';
 import * as SC from './styled';
 
 export default () => {

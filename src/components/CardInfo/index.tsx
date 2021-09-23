@@ -1,4 +1,4 @@
-
+import Panel from '../Panel';
 import * as SC from './styled';
 
 interface IProps {
@@ -10,12 +10,12 @@ interface IProps {
 export default (props: IProps) => {
   const { value, title, subValue, isHighligted } = props;
   return (
-    <SC.Container isHighligted={isHighligted}>
+    <Panel isHighligted={isHighligted}>
       <div>
         <SC.Title>{title}</SC.Title>
         <SC.Value>{value}</SC.Value>
         <SC.SubValue>{subValue}</SC.SubValue>
       </div>
-    </SC.Container>
+    </Panel>
   )
 }

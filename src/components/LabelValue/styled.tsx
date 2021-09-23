@@ -2,27 +2,37 @@ import styled from 'styled-components';
 
 interface IContainer {
   isReverse?: boolean;
-  isLarge?: boolean;
-  align?: 'left' | 'right'
+  align?: 'left' | 'right';
+  size?: 'small' | 'large' | undefined;
 }
 export const Container = styled.div<IContainer>`
-  font-size: ${p => p.isLarge ? 28 : 10}px;
+  font-size: ${p => !!p.size ? p.size === 'large' ? 36 : 10 : 28}px;
   font-weight: 700;
   text-align: ${p => !!p.align ? p.align === 'left' ? 'left' : 'right' : 'center'};
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: ${p => !!p.align ? p.align === 'left' ? 'flex-start' : 'flex-end' : 'center'};
-  opacity: ${p => p.isLarge ? 1 : .8};
+  opacity: ${p => p.size !== 'small' ? 1 : .8};
+  ${p => p.size !== 'small' ? `
+    line-height: 1.2;
+  ` : ''};
+  a {
+    opacity: 1;
+    color: white;
+  }
   > p {
     font-weight: 400;
     opacity: 0.8;
-    margin: ${p => p.isLarge ? -10 : -2}px 0;
-    font-size: ${p => p.isLarge ? 10 : 8}px;
+    margin: 0;
+    line-height: 1.2;
+    font-size: ${p => !!p.size ? p.size === 'large' ? 14 : 8 : 10}px;
     width: 100%;
     white-space: nowrap;
     display: flex;
     align-items: center;
+    justify-content: ${p => !!p.align ? p.align === 'left' ? 'flex-start' : 'flex-end' : 'center'};
+    text-align: ${p => !!p.align ? p.align === 'left' ? 'left' : 'right' : 'center'};
     > small {
       margin-left: 5px;
       font-size: 0.75em;

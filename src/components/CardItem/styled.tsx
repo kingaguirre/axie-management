@@ -1,10 +1,15 @@
 import styled from 'styled-components';
-import { Container as CardInfoContainer, Title } from '../CardInfo/styled';
+import { Container as PanelContainer } from '../Panel/styled';
 
-export const Container = styled(CardInfoContainer)`
+export const Container = styled(PanelContainer)`
   justify-content: flex-start;
   display: block;
   position: relative;
+  cursor: pointer;
+  transition: all .3s ease;
+  &:hover {
+    background-color: ${p => p.theme.borderColor};
+  }
 `;
 
 interface IShareIcon {

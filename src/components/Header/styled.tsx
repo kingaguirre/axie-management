@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const HeaderContainer = styled.div`
   &&& {
     .navbar.bg-dark {
-      background-color: #36393f!important;
-      border-bottom: 1px solid rgb(47, 49, 54);
+      background-color: ${p => p.theme.headerBG}!important;
+      border-bottom: 1px solid ${p => p.theme.headerBorderColor};
       height: 52px;
       padding: 0;
       a {

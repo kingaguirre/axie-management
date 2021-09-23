@@ -5,9 +5,9 @@ export const ControlContainer = styled.div`
   margin: 6px 0;
   .input-group.input-group-sm {
     .input-group-text {
-      background-color: rgb(54,57,63);
-      border: 1px solid rgba(235,237,238,0.125);
-      color: rgb(235,237,238);
+      background-color: ${p => p.theme.panelBg};
+      border: 1px solid ${p => p.theme.borderColor};
+      color: ${p => p.theme.color};
       font-size: 10px!important;
       font-weight: 700;
       text-transform: uppercase;
@@ -18,10 +18,10 @@ export const ControlContainer = styled.div`
     }
   }
   .form-control {
-    background-color: rgb(54,57,63);
-    border: 1px solid rgba(235,237,238,0.125);
+    background-color: ${p => p.theme.panelBg};
+    border: 1px solid ${p => p.theme.borderColor};
     border-radius: 3px;
-    color: rgb(235,237,238);
+    color: ${p => p.theme.color};
     padding-left: 12px;
     
   }

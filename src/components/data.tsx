@@ -31,7 +31,8 @@ export default [
   },
   {
     ronin: 'ronin:34df8e3f41a51939a063e365a602a64fc8f6586f', // eric
-    share: 60
+    share: 60,
+    otherSlp: 1876
   },
   {
     ronin: 'ronin:7e721d00685225ae5511a3d3600b92c87c3deaf7', // mark
@@ -39,19 +40,23 @@ export default [
   },
   {
     ronin: 'ronin:a180ab5097a4b4532f5d0099960b14296ff94dc8', // unmada
-    share: 100
+    share: 100,
+    otherSlp: 4850
   },
   {
     ronin: 'ronin:71e339feb065c7e17929dd6db858a7b3e6f18f5b', // tonyo
-    share: 60
+    share: 60,
+    otherSlp: 998
   },
   {
     ronin: 'ronin:02ab90f446330d47b78e653b49da8b4886af600a', // cesar
-    share: 60
+    share: 60,
+    otherSlp: 1292
   },
   {
     ronin: 'ronin:29705d9b6cbf5e6082a40f1574cbcd51974f63ba', // edison
-    share: 60
+    share: 60,
+    otherSlp: 1349
   },
   {
     ronin: 'ronin:5af8386b7e7b72932e173326b664774a42ce4de2', // yram

@@ -1,8 +1,8 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle<{theme: any}>`
   body {
-    background-color: rgb(47, 49, 54);
+    background-color: ${p => p.theme.bodyBg};
     min-height: 100vh;
     color: white;
     font-family: Avenir Next,Muli,sans-serif;
@@ -19,4 +19,4 @@ export const GlobalStyle = createGlobalStyle`
     border-color: currentColor;
 }
 `
-export const MainContainer = styled.div``;
+export const AppContainer = styled.div``;

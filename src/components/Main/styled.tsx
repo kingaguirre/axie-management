@@ -2,20 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.div``;
 
-export const CardInfoContainer = styled.div`
-  .row > div {
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-`;
-
-export const CardItemContainer = styled.div`
-  .row > div {
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-`;
-
 export const Loader = styled.div`
   height: 80vh;
   width: 100vw;
@@ -37,5 +23,17 @@ export const Loader = styled.div`
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+  }
+`;
+
+export const InnerContainer = styled.div`
+  animation: fadeIn 0.6s ease;
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 `;
