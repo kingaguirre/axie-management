@@ -34,7 +34,7 @@ export default () => {
     Promise.all(
       DATA.map(item => fetchData(item))
     ).then((values) => {
-      console.log(values)
+      // console.log(values)
       setData(values);
     });
   }, []);

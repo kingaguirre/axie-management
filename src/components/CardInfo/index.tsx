@@ -11,11 +11,11 @@ export default (props: IProps) => {
   const { value, title, subValue, isHighligted } = props;
   return (
     <Panel isHighligted={isHighligted}>
-      <div>
+      <SC.CardInfoContainer>
         <SC.Title>{title}</SC.Title>
         <SC.Value>{value}</SC.Value>
         <SC.SubValue>{subValue}</SC.SubValue>
-      </div>
+      </SC.CardInfoContainer>
     </Panel>
   )
 }

@@ -23,7 +23,7 @@ export const Container = styled.div<IContainer>`
   }
   > p {
     font-weight: 400;
-    opacity: 0.8;
+    color: #a1a6b6;
     margin: 0;
     line-height: 1.2;
     font-size: ${p => !!p.size ? p.size === 'large' ? 14 : 8 : 10}px;

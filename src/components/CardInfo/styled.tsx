@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const CardInfoContainer = styled.div`
+  text-align: center;
+`;
+
 export const Value = styled.div`
   font-size: 20px;
   font-weight: 700;
