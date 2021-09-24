@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/axie-management/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/axie-management/static/js/main.a660614a.chunk.js",
-    "main.js.map": "/axie-management/static/js/main.a660614a.chunk.js.map",
+    "main.js": "/axie-management/static/js/main.567e701b.chunk.js",
+    "main.js.map": "/axie-management/static/js/main.567e701b.chunk.js.map",
     "runtime-main.js": "/axie-management/static/js/runtime-main.a544b713.js",
     "runtime-main.js.map": "/axie-management/static/js/runtime-main.a544b713.js.map",
     "static/css/2.818011ed.chunk.css": "/axie-management/static/css/2.818011ed.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.818011ed.chunk.css",
     "static/js/2.3310d09b.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.a660614a.chunk.js"
+    "static/js/main.567e701b.chunk.js"
   ]
 }
