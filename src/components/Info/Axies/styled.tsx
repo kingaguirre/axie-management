@@ -52,6 +52,7 @@ export const Body = styled.div`
   padding: 12px;
   img {
     width: 200px;
+    min-height: 150px;
   }
 `;
 

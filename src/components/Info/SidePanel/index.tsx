@@ -38,12 +38,12 @@ export default (props: any) => {
           isReverse
           size="small"
         />
-        <LabelValue
+        {/* <LabelValue
           label="Battles"
           value={fetchingBattles ? '-' : getWinRate(battles)}
           isReverse
           size="small"
-        />
+        /> */}
       </SC.Info>
     </Panel>
   )
