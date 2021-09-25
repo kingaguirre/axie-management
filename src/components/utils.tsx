@@ -7,6 +7,10 @@ export const numberWithCommas = (x: any) => {
   return parts.join(".");
 };
 
+export const isManager = (share: number) => {
+  return share === -1;
+};
+
 export const getTotalSlp = (slp: number, share: number) => {
   return parseInt(((share / 100) * slp).toFixed(), 10);
 }
@@ -60,7 +64,7 @@ export const getTotalAvg = (data: any, slpPrice: any) => {
 
 export const getTotalIskoSlp = (data: any, slpPrice: any) => {
   const totalAvg = !!data ? data.reduce((sum: number, cur: any) => 
-    sum + getTotalSlp(cur.total_slp, cur.share), 0) : 0
+    sum + getIskoSlp(cur), 0) : 0
   return {
     value: numberWithCommas(totalAvg),
     subValue: `${PHP_PREFIX}${numberWithCommas(totalAvg * slpPrice)}`
@@ -69,7 +73,7 @@ export const getTotalIskoSlp = (data: any, slpPrice: any) => {
 
 export const getTotalManagerSlp = (data: any, slpPrice: any) => {
   const totalAvg = !!data ? data.reduce((sum: number, cur: any) => 
-    sum + getTotalSlp(cur.total_slp, cur.share === -1 ? 100 : 100 - cur.share), 0) : 0
+    sum + getManagerSlp(cur), 0) : 0
   return {
     value: numberWithCommas(totalAvg),
     subValue: `${PHP_PREFIX}${numberWithCommas(totalAvg * slpPrice)}`
@@ -92,3 +96,20 @@ export const getQueryStringParams = (params: string) => {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(params);
 }
+
+export const getCalculatedShare = (value: any) => {
+  const { last_claim, in_game_slp, share } = value;
+  return isManager(share) ? 0 : getAvg(last_claim, in_game_slp) >= 125 ? 60 : 50;
+};
+
+export const getIskoSlp = (value: any) => {
+  const { total_slp } = value;
+  const calculatedShare = getCalculatedShare(value);
+  return getTotalSlp(total_slp, calculatedShare);
+};
+
+export const getManagerSlp = (value: any) => {
+  const { total_slp, share } = value;
+  const calculatedShare = getCalculatedShare(value);
+  return getTotalSlp(total_slp, isManager(share) ? 100 : 100 - calculatedShare);
+};

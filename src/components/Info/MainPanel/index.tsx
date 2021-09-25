@@ -3,15 +3,24 @@ import { Row, Col } from 'react-bootstrap';
 import Panel from '../../Panel';
 import LabelValue from '../../LabelValue';
 import slp_img from '../../../assets/slp.png';
-import { numberWithCommas, getTotalSlp, getAvg, PHP_PREFIX, getTotalDays } from '../../utils';
+import {
+  numberWithCommas,
+  getTotalSlp,
+  getAvg,
+  PHP_PREFIX,
+  getTotalDays,
+  getIskoSlp,
+  getCalculatedShare
+} from '../../utils';
 import * as SC from './styled';
 
 export default (props: any) => {
   const { slpPrice, cache_last_updated, lifetime_slp, otherSlp, last_claim, total_slp, in_game_slp, share, rank, ronin } = props;
 
   const isManager = share === -1;
-  const calculatedShare = getAvg(last_claim, in_game_slp) >= 125 ? 60 : 50;
-  const totalIskoSlp: number = getTotalSlp(total_slp, isManager ? 100 : calculatedShare);
+  const totalIskoSlp: number = getIskoSlp(props);
+  const calculatedShare = getCalculatedShare(props)
+
 
   return (
     <Panel>

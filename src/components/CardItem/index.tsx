@@ -4,16 +4,26 @@ import slp_img from '../../assets/slp.png';
 import ronin_img from '../../assets/rounded-ronin-icon.png';
 import LabelValue from '../LabelValue';
 import { AppContext } from '../Main';
-import { numberWithCommas, getTotalSlp, getAvg, PHP_PREFIX, copyToClipboard, getTotalDays } from '../utils';
+import {
+  numberWithCommas,
+  getAvg,
+  PHP_PREFIX,
+  copyToClipboard,
+  getTotalDays,
+  getIskoSlp,
+  getManagerSlp,
+  getCalculatedShare,
+} from '../utils';
 import * as SC from './styled';
 
 export default (props: any) => {
   const { name, cache_last_updated, last_claim, total_slp, in_game_slp, mmr, share, rank, ronin } = props;
   const history = useHistory();
 
-  const isManager = share === -1;
-  const calculatedShare = getAvg(last_claim, in_game_slp) >= 125 ? 60 : 50;
-  const totalIskoSlp: number = getTotalSlp(total_slp, isManager ? 100 : calculatedShare);
+  const isManager: boolean = share === -1;
+  const managerSlp: number = getManagerSlp(props);
+  const iskoSlp: number = isManager ? managerSlp : getIskoSlp(props);
+  const calculatedShare = getCalculatedShare(props)
 
   const getShareIconColor = (avgLimit: number) => {
     const avg = getAvg(last_claim, in_game_slp);
@@ -62,9 +72,9 @@ export default (props: any) => {
               <AppContext.Consumer>
                 {({slpPrice}) => (
                   <LabelValue
-                    label={`${PHP_PREFIX}${numberWithCommas(slpPrice * totalIskoSlp)}`}
+                    label={`${PHP_PREFIX}${numberWithCommas(slpPrice * iskoSlp)}`}
                     labelSmall={`in ${getTotalDays(last_claim)} days`}
-                    value={numberWithCommas(totalIskoSlp)}
+                    value={numberWithCommas(iskoSlp)}
                     align="left"
                   />
                 )}
@@ -84,7 +94,7 @@ export default (props: any) => {
             />
             <LabelValue
               label="Manager"
-              value={numberWithCommas(getTotalSlp(total_slp, isManager ? 100 : 100 - calculatedShare))}
+              value={numberWithCommas(managerSlp)}
               isReverse
               size="small"
             />

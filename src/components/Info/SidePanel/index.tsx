@@ -1,12 +1,11 @@
 import Panel from '../../Panel';
 import LabelValue from '../../LabelValue';
 import ronin_img from '../../../assets/rounded-ronin-icon.png';
-import { getTotalSlp, getAvg, copyToClipboard } from '../../utils';
-import { getWinRate } from '../utils';
+import { copyToClipboard } from '../../utils';
 import * as SC from './styled';
 
 export default (props: any) => {
-  const { mmr, fetchingAxies, axies, fetchingBattles, battles, last_claim, total_slp, in_game_slp, share, rank, ronin } = props;
+  const { mmr, fetchingAxies, axies, rank, ronin } = props;
 
   return (
     <Panel>
