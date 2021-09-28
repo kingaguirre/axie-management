@@ -99,7 +99,11 @@ export const getQueryStringParams = (params: string) => {
 
 export const getCalculatedShare = (value: any) => {
   const { last_claim, in_game_slp, share } = value;
-  return isManager(share) ? 0 : getAvg(last_claim, in_game_slp) >= 125 ? 60 : 50;
+  if (!!share) {
+    return isManager(share) ? 0 : share;
+  } else {
+    return getAvg(last_claim, in_game_slp) >= 125 ? 60 : 50;
+  }
 };
 
 export const getIskoSlp = (value: any) => {

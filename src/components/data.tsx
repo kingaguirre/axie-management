@@ -1,12 +1,10 @@
 export default [
   {
     ronin: 'ronin:34c97bb8d4a8350a03cdc44eb8eb90f74a66fd80', // king
-    admin: true,
     share: -1
   },
   {
     ronin: 'ronin:eb11efa52e565e3e0e4139264a0f53824e048275', // jane
-    admin: true,
   },
   {
     ronin: 'ronin:3b8cf7d0056a6b0b85a4e4ae58f539b706c87159', // sanvel
@@ -72,6 +70,6 @@ export default [
   {
     ronin: 'ronin:70f1d684258f2f3c0bdc7baa50577f9859acf79b', // frank
   },
-  ];
+];
   
-  export const SLP_PRICE_API = 'https://api.coingecko.com/api/v3/simple/price?ids=smooth-love-potion&vs_currencies=php';
+export const SLP_PRICE_API = 'https://api.coingecko.com/api/v3/simple/price?ids=smooth-love-potion&vs_currencies=php';
