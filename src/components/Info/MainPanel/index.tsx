@@ -10,6 +10,7 @@ import {
   PHP_PREFIX,
   getTotalDays,
   getIskoSlp,
+  getManagerSlp,
   getCalculatedShare
 } from '../../utils';
 import * as SC from './styled';
@@ -17,10 +18,10 @@ import * as SC from './styled';
 export default (props: any) => {
   const { slpPrice, cache_last_updated, lifetime_slp, otherSlp, last_claim, total_slp, in_game_slp, share, rank, ronin } = props;
 
-  const isManager = share === -1;
-  const totalIskoSlp: number = getIskoSlp(props);
-  const calculatedShare = getCalculatedShare(props)
-
+  const isManager: boolean = share === -1;
+  const managerSlp: number = getManagerSlp(props);
+  const iskoSlp: number = isManager ? managerSlp : getIskoSlp(props);
+  const calculatedShare = getCalculatedShare(props);
 
   return (
     <Panel>
@@ -32,12 +33,12 @@ export default (props: any) => {
           <img src={slp_img} alt="SLP Icon"/>
           <LabelValue
             label="Slp Share for this month"
-            value={numberWithCommas(totalIskoSlp)}
+            value={numberWithCommas(iskoSlp)}
             align="left"
             size="large"
           />
           <small>
-            {`${PHP_PREFIX}${numberWithCommas(slpPrice * totalIskoSlp)} `}
+            {`${PHP_PREFIX}${numberWithCommas(slpPrice * iskoSlp)} `}
             <i>{`in ${getTotalDays(last_claim)} days`}</i>
           </small>
         </SC.Slp>
@@ -77,8 +78,8 @@ export default (props: any) => {
                 />
                 <LabelValue
                   label="Share + On hold"
-                  labelSmall={`${PHP_PREFIX}${numberWithCommas(slpPrice * (totalIskoSlp + (otherSlp || 0)))} `}
-                  value={numberWithCommas(totalIskoSlp + (otherSlp || 0))}
+                  labelSmall={`${PHP_PREFIX}${numberWithCommas(slpPrice * (iskoSlp + (otherSlp || 0)))} `}
+                  value={numberWithCommas(iskoSlp + (otherSlp || 0))}
                   isReverse
                 />
                 <LabelValue

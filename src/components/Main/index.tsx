@@ -1,8 +1,10 @@
 import { createContext, useEffect, useState } from 'react';
-import { HashRouter, Route, Switch, Link } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
+import Loader from '../Loader';
 import Header from '../Header';
 import Dashboard from '../Dashboard';
 import Info from '../Info';
+import AllAxies from '../AllAxies';
 import DATA from '../data';
 import { SLP_PRICE_API } from '../data';
 import * as SC from './styled';
@@ -34,7 +36,6 @@ export default () => {
     Promise.all(
       DATA.map(item => fetchData(item))
     ).then((values) => {
-      // console.log(values)
       setData(values);
     });
   }, []);
@@ -49,7 +50,7 @@ export default () => {
     }}>
       <HashRouter>
         <Header/>
-        {!data || !slpPrice ? <SC.Loader/> : (
+        {!data || !slpPrice ? <Loader/>: (
           <SC.Container>
             <Switch>
               <Route exact path="/">
@@ -57,6 +58,9 @@ export default () => {
               </Route>
               <Route path="/info">
                 <Info/>
+              </Route>
+              <Route path="/all-axies">
+                <AllAxies/>
               </Route>
             </Switch>
           </SC.Container>

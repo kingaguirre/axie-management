@@ -8,8 +8,6 @@ import Axies from './Axies';
 import * as SC from './styled';
 
 export default () => {
-  const [fetchingBattles, setFetchingBattles] = useState<boolean>(false);
-  const [fetchingAxies, setFetchingAxies] = useState<boolean>(false);
   const [axies, setAxies] = useState<any | undefined>(undefined);
   const [battles, setBattles] = useState<any | undefined>(undefined);
   const history = useHistory();
@@ -27,7 +25,6 @@ export default () => {
 
   const getAxies = async (ronin: string) => {
     if (!!ronin) {
-      setFetchingAxies(true);
       const axies = await fetch(`https://api.lunaciaproxy.cloud/_axies/${ronin}`);
       return Promise.all([await axies.json()]).then((response) => {
         if (!!response) {
@@ -35,13 +32,12 @@ export default () => {
           // console.log(axies)
           setAxies(axies);
         }
-        setFetchingAxies(false);
       });
     }
   };
+
   const getBattles = async (ronin: string) => {
     if (!!ronin) {
-      setFetchingBattles(true);
       const battles = await fetch(`https://api.lunaciaproxy.cloud/_battles/${ronin}/200/0`);
       return Promise.all([await battles.json()]).then((response) => {
         if (!!response) {
@@ -49,7 +45,6 @@ export default () => {
           const battles = response[0].battle_logs.pvp;
           setBattles(battles);
         }
-        setFetchingBattles(false);
       });
     }
   };
@@ -81,9 +76,7 @@ export default () => {
                 <Col xl={3} md={4}>
                   <SidePanel
                     {...selectedInfo}
-                    fetchingAxies={fetchingAxies}
                     axies={axies}
-                    fetchingBattles={fetchingBattles}
                     battles={battles}
                   />
                 </Col>

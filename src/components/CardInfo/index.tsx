@@ -6,11 +6,12 @@ interface IProps {
   title: string;
   subValue?: string;
   isHighligted?: boolean
+  onClick?: any
 }
 export default (props: IProps) => {
-  const { value, title, subValue, isHighligted } = props;
+  const { value, title, subValue, isHighligted, onClick } = props;
   return (
-    <Panel isHighligted={isHighligted}>
+    <Panel onClick={onClick} isHighligted={isHighligted}>
       <SC.CardInfoContainer>
         <SC.Title>{title}</SC.Title>
         <SC.Value>{value}</SC.Value>

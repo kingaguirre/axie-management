@@ -23,7 +23,7 @@ export default (props: any) => {
   const isManager: boolean = share === -1;
   const managerSlp: number = getManagerSlp(props);
   const iskoSlp: number = isManager ? managerSlp : getIskoSlp(props);
-  const calculatedShare = getCalculatedShare(props)
+  const calculatedShare = getCalculatedShare(props);
 
   const getShareIconColor = (avgLimit: number) => {
     const avg = getAvg(last_claim, in_game_slp);

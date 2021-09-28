@@ -5,7 +5,7 @@ import { copyToClipboard } from '../../utils';
 import * as SC from './styled';
 
 export default (props: any) => {
-  const { mmr, fetchingAxies, axies, rank, ronin } = props;
+  const { mmr, axies, rank, ronin } = props;
 
   return (
     <Panel>
@@ -33,7 +33,7 @@ export default (props: any) => {
         />
         <LabelValue
           label="Axies"
-          value={fetchingAxies ? '-' : !!axies ? axies.length : 0}
+          value={!axies ? '-' : !!axies ? axies.length : 0}
           isReverse
           size="small"
         />

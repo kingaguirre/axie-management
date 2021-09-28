@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 interface IProps {
   isHighligted?: boolean;
+  onClick?: any;
   theme?: any;
 }
 export const Container = styled.div<IProps>`
@@ -11,7 +12,16 @@ export const Container = styled.div<IProps>`
   padding: 12px;
   color: ${p => p.theme.color};
   height: 100%;
+  transition: all .3s ease;
   animation: fadeIn 0.6s ease;
+  ${p => p.onClick ? `
+    cursor: pointer;
+    &:hover {
+      border-color: #11131b;
+      background-color: ${p.theme.borderColor};
+      box-shadow: 0px 3px 8px 0px rgba(17, 19, 27, .3);
+    }
+  ` : ''}
   @keyframes fadeIn {
     0% {
       opacity: 0;

@@ -2,8 +2,12 @@ import styled from 'styled-components';
 import { Title as TitleStyle } from '../styled';
 
 export const AxiesContainer = styled.div`
-  > .row > * {
-    margin-bottom: 24px;
+  > .row {
+    &:not(:first-child) {
+      > * {
+        margin-bottom: 24px;
+      }
+    }
   }
 `;
 
@@ -36,13 +40,13 @@ export const AxieIdName = styled.div`
 
 export const Id = styled.div`
   color: white;
-  padding: 1px 8px;
+  padding: 4px 2px 3px;
   border-radius: 4px;
   background-color: grey;
   line-height: 1;
   text-align: center;
-  font-size: 12px;
-  width: 75px;
+  font-size: 11px;
+  width: 70px;
 `;
 
 export const Body = styled.div`
@@ -80,4 +84,10 @@ export const Footer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+`;
+
+export const RightInfo = styled.div`
+  > * {
+    margin-bottom: 12px;
+  }
 `;

@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Container, Row, Col, Form} from 'react-bootstrap';
+import { Container, Row, Col, Form } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import CardInfo from '../CardInfo';
 import CardItem from '../CardItem';
 import {
@@ -22,6 +23,7 @@ export default () => {
   const [sortBy, setSortBy] = useState<string>('name');
   const [searchText, setSearchText] = useState<string>('');
   const isAdmin = getQueryStringParams('user') === 'admin';
+  const history = useHistory();
 
   return (
     <AppContext.Consumer>
@@ -41,6 +43,7 @@ export default () => {
                     <CardInfo
                       title="Total SLP"
                       isHighligted
+                      onClick={() => history.push('/all-axies')}
                       {...getTotaDashboardlSlp(data, slpPrice)}
                     />
                   </Col>
