@@ -38,3 +38,7 @@ export const AscDescContainer = styled(InputGroup.Text)`
   min-width: 40px!important;
   justify-content: center;
 `;
+export const TeamsContainer = styled(InputGroup.Text)`
+  width: 80px;
+  justify-content: center;
+`;

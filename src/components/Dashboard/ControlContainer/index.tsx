@@ -8,6 +8,7 @@ interface IProps {
   sizes?: any;
   onClickAscDescButton?: () => void;
   ascDescText?: string;
+  totalTeams?: string;
 }
 export default (props: IProps) => (
   <Col {...props.sizes}>
@@ -20,6 +21,7 @@ export default (props: IProps) => (
         )}
         <InputGroup.Text>{props.title}</InputGroup.Text>
         {props.children}
+        {props.totalTeams && <InputGroup.Text>{props.totalTeams}</InputGroup.Text>}
       </InputGroup>
     </SC.ControlContainer>
   </Col>

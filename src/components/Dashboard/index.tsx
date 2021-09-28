@@ -11,10 +11,9 @@ import {
   getTotalIskoSlp,
   getTotalManagerSlp,
   getQueryStringParams,
-  getIskoSlp,
-  isManager
 } from '../utils';
 import { AppContext } from '../Main';
+import { filteredData } from './utils';
 import ControlContainer from './ControlContainer';
 import * as SC from './styled';
 
@@ -92,6 +91,7 @@ export default () => {
               <ControlContainer
                 sizes={{xl: 9, lg: 8, md: 6}}
                 title="search"
+                totalTeams={`Teams (${filteredData({data, sortBy, isAsc, searchText}).length})`}
               >
                 <Form.Control placeholder="Search name..." size="sm" onChange={(e) => setSearchText(e.target.value)}/>
               </ControlContainer>
@@ -99,38 +99,7 @@ export default () => {
 
             <SC.CardItemContainer>
               <Row>
-                {!!data && !!data.length && data
-                  .filter((item: any) => item.name.toLowerCase().includes(searchText.toLowerCase()))
-                  .sort((a: any, b: any) => {
-                    if (sortBy === 'share_slp') {
-                      const valA = !!a.total_slp && a.total_slp !== 0 && (isManager(a.share) ? a.total_slp : getIskoSlp(a));
-                      const valB = !!b.total_slp && b.total_slp !== 0 && (isManager(b.share) ? b.total_slp : getIskoSlp(b));
-                      if (isAsc) {
-                        return valA < valB ? -1 : 1;
-                      } else {
-                        return valA > valB ? -1 : 1;
-                      }
-                    } else {
-                      const valA = !!a[sortBy] && a[sortBy] !== 0 && a[sortBy];
-                      const valB = !!b[sortBy] && b[sortBy] !== 0 && b[sortBy];
-                      if (typeof valA === 'string' && typeof valB === 'string') {
-                        const nameA = valA.toLowerCase();
-                        const nameB = valB.toLowerCase();
-                        if (isAsc) {
-                          return nameA !== nameB ? nameA < nameB ? -1 : 1 : 0;
-                        } else {
-                          return nameA !== nameB ? nameA > nameB ? -1 : 1 : 0;
-                        }
-                      } else {
-                        if (isAsc) {
-                          return valA !== valB ? valA < valB ? -1 : 1 : 0;
-                        } else {
-                          return valA !== valB ? valA > valB ? -1 : 1 : 0;
-                        }
-                      }
-                    }
-                  })
-                  .map((item: any, i: number) => (
+                {filteredData({data, sortBy, isAsc, searchText}).map((item: any, i: number) => (
                   <Col xl={3} lg={4} md={6} key={i}>
                     <CardItem {...item}/>
                   </Col>
