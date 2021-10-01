@@ -38,12 +38,12 @@ export default () => {
 
   const getBattles = async (ronin: string) => {
     if (!!ronin) {
-      const battles = await fetch(`https://api.lunaciaproxy.cloud/_battles/${ronin}/200/0`);
+      const battles = await fetch(`https://game-api.axie.technology/battlelog/${ronin}`);
       return Promise.all([await battles.json()]).then((response) => {
         if (!!response) {
           // console.log(response)
-          const battles = response[0].battle_logs.pvp;
-          setBattles(battles);
+          // const battles = response[0].battle_logs.pvp;
+          // setBattles(battles);
         }
       });
     }
