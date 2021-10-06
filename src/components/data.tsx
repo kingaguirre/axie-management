@@ -5,7 +5,6 @@ export default [
   },
   {
     ronin: 'ronin:eb11efa52e565e3e0e4139264a0f53824e048275', // jane
-    otherSlp: 2666
   },
   {
     ronin: 'ronin:3b8cf7d0056a6b0b85a4e4ae58f539b706c87159', // sanvel
@@ -77,6 +76,12 @@ export default [
   },
   {
     ronin: 'ronin:70f1d684258f2f3c0bdc7baa50577f9859acf79b', // frank
+  },
+  {
+    ronin: 'ronin:5ed1cd1f60f7b4893ff07b8ca7304efeeab1408f', // kyrie
+  },
+  {
+    ronin: 'ronin:0ab328884835678f23badc9c5fb77d311c6b298e', // jhay
   },
 ];
   
