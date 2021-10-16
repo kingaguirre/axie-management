@@ -6,7 +6,7 @@ import {
 export const filteredData = (values: any) => {
   const { data, sortBy, isAsc, searchText } = values;
   return !!data && !!data.length && data
-  .filter((item: any) => item.name.toLowerCase().includes(searchText.toLowerCase()))
+  .filter((item: any) => !!item.name && item.name.toLowerCase().includes(searchText.toLowerCase()))
   .sort((a: any, b: any) => {
     if (sortBy === 'share_slp') {
       const valA = !!a.total_slp && a.total_slp !== 0 && (isManager(a.share) ? a.total_slp : getIskoSlp(a));

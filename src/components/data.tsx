@@ -5,6 +5,7 @@ export default [
   },
   {
     ronin: 'ronin:eb11efa52e565e3e0e4139264a0f53824e048275', // jane
+    share: 100,
   },
   {
     ronin: 'ronin:3b8cf7d0056a6b0b85a4e4ae58f539b706c87159', // sanvel
@@ -34,7 +35,7 @@ export default [
   },
   {
     ronin: 'ronin:a180ab5097a4b4532f5d0099960b14296ff94dc8', // unmada
-    share: -1,
+    share: 100,
     otherSlp: 9634
   },
   {
