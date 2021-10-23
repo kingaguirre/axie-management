@@ -27,7 +27,6 @@ export default [
   },
   {
     ronin: 'ronin:34df8e3f41a51939a063e365a602a64fc8f6586f', // eric
-    otherSlp: 1876
   },
   {
     ronin: 'ronin:7e721d00685225ae5511a3d3600b92c87c3deaf7', // mark
@@ -48,11 +47,9 @@ export default [
   },
   {
     ronin: 'ronin:29705d9b6cbf5e6082a40f1574cbcd51974f63ba', // edison
-    otherSlp: 1349
   },
   {
     ronin: 'ronin:5af8386b7e7b72932e173326b664774a42ce4de2', // yram
-    otherSlp: 2840
   },
   {
     ronin: 'ronin:68c314ab9eb774041e9d43d4a5959049009893d0', // abot
