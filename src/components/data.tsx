@@ -1,8 +1,8 @@
 export default [
-  // {
-  //   ronin: 'ronin:34c97bb8d4a8350a03cdc44eb8eb90f74a66fd80', // king
-  //   share: 50
-  // },
+  {
+    ronin: 'ronin:34c97bb8d4a8350a03cdc44eb8eb90f74a66fd80', // king
+    share: 50
+  },
   {
     ronin: 'ronin:eb11efa52e565e3e0e4139264a0f53824e048275', // jane
     share: 100,
