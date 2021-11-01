@@ -1,8 +1,8 @@
 export default [
-  {
-    ronin: 'ronin:34c97bb8d4a8350a03cdc44eb8eb90f74a66fd80', // king
-    share: 50
-  },
+  // {
+  //   ronin: 'ronin:34c97bb8d4a8350a03cdc44eb8eb90f74a66fd80', // king
+  //   share: 50
+  // },
   {
     ronin: 'ronin:eb11efa52e565e3e0e4139264a0f53824e048275', // jane
     share: 100,
@@ -49,7 +49,7 @@ export default [
     ronin: 'ronin:29705d9b6cbf5e6082a40f1574cbcd51974f63ba', // edison
   },
   {
-    ronin: 'ronin:5af8386b7e7b72932e173326b664774a42ce4de2', // yram
+    ronin: 'ronin:5af8386b7e7b72932e173326b664774a42ce4de2', // justine
   },
   {
     ronin: 'ronin:68c314ab9eb774041e9d43d4a5959049009893d0', // abot
@@ -82,7 +82,7 @@ export default [
     ronin: 'ronin:0ab328884835678f23badc9c5fb77d311c6b298e', // jhay
   },
   {
-    ronin: 'ronin:d667571e89c8827f00ce0c76130ecc2ae9c71800', // mat
+    ronin: 'ronin:d667571e89c8827f00ce0c76130ecc2ae9c71800', // jc
   },
   {
     ronin: 'ronin:6b88145556c6411900d0fffbf48afff522fec092', // jhie
