@@ -90,6 +90,15 @@ export default [
   {
     ronin: 'ronin:552af96a9089402accfedda84952338fde3b6921', // rivera
   },
+  {
+    ronin: 'ronin:2e2a71b930ae75ef87b2aeb966fa953ebf9dff1b', // tunyingsss
+  },
+  {
+    ronin: 'ronin:cf96fb9bc4a96e82bd826e836ffe3feb4084b3dd', // rasec
+  },
+  {
+    ronin: 'ronin:b81e2909d777677b4f463fb721fe9ad9c8fa155c', // zb
+  },
 ];
   
 export const SLP_PRICE_API = 'https://api.coingecko.com/api/v3/simple/price?ids=smooth-love-potion&vs_currencies=php';
