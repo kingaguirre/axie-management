@@ -68,8 +68,7 @@ export default [
     ronin: 'ronin:d50116892e9447516ccb42f9897af3c0fe65b6a7', // ryan
   },
   {
-    ronin: 'ronin:70f1d684258f2f3c0bdc7baa50577f9859acf79b', // jc
-    otherSlp: 434,
+    ronin: 'ronin:70f1d684258f2f3c0bdc7baa50577f9859acf79b', // mikee
   },
   {
     ronin: 'ronin:5ed1cd1f60f7b4893ff07b8ca7304efeeab1408f', // kyrie
@@ -79,6 +78,7 @@ export default [
   },
   {
     ronin: 'ronin:d667571e89c8827f00ce0c76130ecc2ae9c71800', // jc
+    otherSlp: 434,
   },
   {
     ronin: 'ronin:6b88145556c6411900d0fffbf48afff522fec092', // jhie
