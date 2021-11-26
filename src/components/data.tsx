@@ -9,7 +9,7 @@ export default [
     otherSlp: 4735,
   },
   {
-    ronin: 'ronin:3b8cf7d0056a6b0b85a4e4ae58f539b706c87159', // sanvel
+    ronin: 'ronin:3b8cf7d0056a6b0b85a4e4ae58f539b706c87159', // jrv
   },
   {
     ronin: 'ronin:0d75bc4d37e01c34bdcc5217d738cd4a10f1a6b0', // mags
@@ -66,6 +66,7 @@ export default [
   },
   {
     ronin: 'ronin:d50116892e9447516ccb42f9897af3c0fe65b6a7', // ryan
+    otherSlp: 785,
   },
   {
     ronin: 'ronin:70f1d684258f2f3c0bdc7baa50577f9859acf79b', // mikee
@@ -95,6 +96,9 @@ export default [
   },
   {
     ronin: 'ronin:b81e2909d777677b4f463fb721fe9ad9c8fa155c', // zb
+  },
+  {
+    ronin: 'ronin:a11b28f75d5fc9d92b2830e3049f9f67fe9e9d15', // rednav
   },
 ];
   
