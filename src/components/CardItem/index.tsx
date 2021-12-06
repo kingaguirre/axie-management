@@ -88,7 +88,7 @@ export default (props: any) => {
             />
             <LabelValue
               label="Total"
-              value={numberWithCommas(total_slp)}
+              value={numberWithCommas(in_game_slp)}
               isReverse
               size="small"
             />

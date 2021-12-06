@@ -107,13 +107,13 @@ export const getCalculatedShare = (value: any) => {
 };
 
 export const getIskoSlp = (value: any) => {
-  const { total_slp } = value;
+  const { in_game_slp } = value;
   const calculatedShare = getCalculatedShare(value);
-  return getTotalSlp(total_slp, calculatedShare);
+  return getTotalSlp(in_game_slp, calculatedShare);
 };
 
 export const getManagerSlp = (value: any) => {
-  const { total_slp, share } = value;
+  const { in_game_slp, share } = value;
   const calculatedShare = getCalculatedShare(value);
-  return getTotalSlp(total_slp, isManager(share) ? 100 : 100 - calculatedShare);
+  return getTotalSlp(in_game_slp, isManager(share) ? 100 : 100 - calculatedShare);
 };
