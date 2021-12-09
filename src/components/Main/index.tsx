@@ -59,9 +59,9 @@ export default () => {
               <Route path="/info">
                 <Info/>
               </Route>
-              <Route path="/all-axies">
+              {/* <Route path="/all-axies">
                 <AllAxies/>
-              </Route>
+              </Route> */}
             </Switch>
           </SC.Container>
         )}

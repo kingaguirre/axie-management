@@ -81,7 +81,7 @@ export default () => {
                   />
                 </Col>
               </Row>
-              <Axies axies={axies}/>
+              {/* <Axies axies={axies}/> */}
             </Container>
           </SC.Container>
         )

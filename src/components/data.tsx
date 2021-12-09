@@ -17,7 +17,6 @@ export default [
   },
   {
     ronin: 'ronin:f9d3d5bc09cd8860aeb8216254c25cb803809abe', // jhayvel
-    otherSlp: 3157,
   },
   {
     ronin: 'ronin:3ab5aa79be066ec52978fa102ea6e38b650ed3b1', // joy
@@ -76,7 +75,6 @@ export default [
   },
   {
     ronin: 'ronin:d50116892e9447516ccb42f9897af3c0fe65b6a7', // ryan
-    otherSlp: 785,
   },
   {
     ronin: 'ronin:70f1d684258f2f3c0bdc7baa50577f9859acf79b', // mikee
@@ -87,15 +85,12 @@ export default [
   },
   {
     ronin: 'ronin:0ab328884835678f23badc9c5fb77d311c6b298e', // jhay
-    otherSlp: 2815,
   },
   {
     ronin: 'ronin:d667571e89c8827f00ce0c76130ecc2ae9c71800', // jc
-    otherSlp: 434,
   },
   {
     ronin: 'ronin:6b88145556c6411900d0fffbf48afff522fec092', // jhie
-    otherSlp: 1555,
   },
   {
     ronin: 'ronin:552af96a9089402accfedda84952338fde3b6921', // rivera
