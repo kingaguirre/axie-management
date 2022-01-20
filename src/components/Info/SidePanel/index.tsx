@@ -5,7 +5,12 @@ import { copyToClipboard } from '../../utils';
 import * as SC from './styled';
 
 export default (props: any) => {
-  const { mmr, axies, rank, ronin } = props;
+  const { mmr, rank, ronin } = props;
+
+  const goToAccount = (ronin: any) => {
+    const newWindow = window.open(`https://marketplace.axieinfinity.com/profile/${ronin}/axie/`, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null;
+  }
 
   return (
     <Panel>
@@ -33,7 +38,7 @@ export default (props: any) => {
         />
         <LabelValue
           label="Axies"
-          value={!axies ? '-' : !!axies ? axies.length : 0}
+          value={<span onClick={() => goToAccount(ronin)}>View Axies</span>}
           isReverse
           size="small"
         />

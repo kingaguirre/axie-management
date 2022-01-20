@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import * as SC from './styled';
 
 interface IProps {
-  value: string | number;
+  value: string | number | ReactNode;
   label: string;
   labelSmall?: ReactNode;
   isReverse?: boolean;
