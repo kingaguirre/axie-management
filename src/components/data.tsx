@@ -45,10 +45,10 @@ export default [
     ronin: 'ronin:71e339feb065c7e17929dd6db858a7b3e6f18f5b', // tonyo
     // otherSlp: 3153,
   },
-  {
-    ronin: 'ronin:02ab90f446330d47b78e653b49da8b4886af600a', // cesar
+  // {
+    // ronin: 'ronin:02ab90f446330d47b78e653b49da8b4886af600a', // cesar__
     // otherSlp: 5772,
-  },
+  // },
   {
     ronin: 'ronin:29705d9b6cbf5e6082a40f1574cbcd51974f63ba', // edison
     // otherSlp: 5797,
@@ -64,21 +64,21 @@ export default [
     ronin: 'ronin:5202e03389e7c76660d79ea44574fa49257bf1e4', // paula
     // otherSlp: 2710,
   },
-  // {
-  //   ronin: 'ronin:db3136bb44b80ed3d3363ddc623753e41993d27e', // budoy
-  //   otherSlp: 4332,
-  // },
   {
-    ronin: 'ronin:50ee59c52cdfd23cf519ae6f3e294a528bac3409', // miguel
-    otherSlp: 2854,
+    ronin: 'ronin:db3136bb44b80ed3d3363ddc623753e41993d27e', // cesar
+    // otherSlp: 4332,
   },
+  // {
+    // ronin: 'ronin:50ee59c52cdfd23cf519ae6f3e294a528bac3409', // miguel__
+    // otherSlp: 2854,
+  // },
   {
     ronin: 'ronin:5d95c76cac306df5ba63e2838e24800d0175e38c', // james
     otherSlp: 5948,
   },
-  // {
-  //   ronin: 'ronin:d50116892e9447516ccb42f9897af3c0fe65b6a7', // ryan
-  // },
+  {
+    ronin: 'ronin:d50116892e9447516ccb42f9897af3c0fe65b6a7', // miguel
+  },
   {
     ronin: 'ronin:70f1d684258f2f3c0bdc7baa50577f9859acf79b', // mikee
     // otherSlp: 2505,
