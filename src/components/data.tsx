@@ -127,6 +127,9 @@ export default [
     ronin: 'ronin:5ba33490b3e313d95a069ceb2e0564d9e0fcf445', // chokie
     otherSlp: 1097,
   },
+  {
+    ronin: 'ronin:3ca3696b343f13e6dc7f7aaf2b5d38b56765dfd9', // jayson
+  },
 ];
   
 export const SLP_PRICE_API = 'https://api.coingecko.com/api/v3/simple/price?ids=smooth-love-potion&vs_currencies=php';
