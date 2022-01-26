@@ -54,7 +54,7 @@ export default [
     // otherSlp: 5797,
   },
   {
-    ronin: 'ronin:5af8386b7e7b72932e173326b664774a42ce4de2', // pretty boy
+    ronin: 'ronin:5af8386b7e7b72932e173326b664774a42ce4de2', // pretty boy__
   },
   {
     ronin: 'ronin:68c314ab9eb774041e9d43d4a5959049009893d0', // abot
@@ -99,10 +99,10 @@ export default [
     ronin: 'ronin:6b88145556c6411900d0fffbf48afff522fec092', // jhie
     // otherSlp: 3682,
   },
-  // {
-    // ronin: 'ronin:552af96a9089402accfedda84952338fde3b6921', // rivera
+  {
+    ronin: 'ronin:552af96a9089402accfedda84952338fde3b6921', // pretty boy
     // otherSlp: 5718,
-  // },
+  },
   // {
     // ronin: 'ronin:2e2a71b930ae75ef87b2aeb966fa953ebf9dff1b', // tunyingsss
     // otherSlp: 2323,
