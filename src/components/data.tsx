@@ -39,16 +39,16 @@ export default [
   {
     ronin: 'ronin:a180ab5097a4b4532f5d0099960b14296ff94dc8', // jiangchen
     share: 100,
-    otherSlp: 33044
+    otherSlp: 51326
   },
   {
     ronin: 'ronin:71e339feb065c7e17929dd6db858a7b3e6f18f5b', // tonyo
     // otherSlp: 3153,
   },
-  // {
-    // ronin: 'ronin:02ab90f446330d47b78e653b49da8b4886af600a', // cesar__
+  {
+    ronin: 'ronin:02ab90f446330d47b78e653b49da8b4886af600a', // baldo
     // otherSlp: 5772,
-  // },
+  },
   {
     ronin: 'ronin:29705d9b6cbf5e6082a40f1574cbcd51974f63ba', // edison
     // otherSlp: 5797,
