@@ -32,10 +32,10 @@ export default [
     ronin: 'ronin:34df8e3f41a51939a063e365a602a64fc8f6586f', // eric
     otherSlp: 8475,
   },
-  {
-    ronin: 'ronin:7e721d00685225ae5511a3d3600b92c87c3deaf7', // mark
-    otherSlp: 7344
-  },
+  // {
+    // ronin: 'ronin:7e721d00685225ae5511a3d3600b92c87c3deaf7', // mark__
+    // otherSlp: 7344
+  // },
   {
     ronin: 'ronin:a180ab5097a4b4532f5d0099960b14296ff94dc8', // jiangchen
     share: 100,
