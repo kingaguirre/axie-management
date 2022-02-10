@@ -10,7 +10,7 @@ import { SLP_PRICE_API } from '../data';
 import * as SC from './styled';
 
 export const AppContext = createContext<any>(undefined);
-const AVG_LIMIT = 125;
+const AVG_LIMIT = 80;
 
 export default () => {
   const [data, setData] = useState<any>(undefined);

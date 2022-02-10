@@ -8,10 +8,10 @@ export default [
     share: 100,
     otherSlp: 17420,
   },
-  {
-    ronin: 'ronin:3b8cf7d0056a6b0b85a4e4ae58f539b706c87159', // jrv
+  // {
+    // ronin: 'ronin:3b8cf7d0056a6b0b85a4e4ae58f539b706c87159', // jrv
     // otherSlp: 4309,
-  },
+  // },
   {
     ronin: 'ronin:0d75bc4d37e01c34bdcc5217d738cd4a10f1a6b0', // mags
     // otherSlp: 3606,

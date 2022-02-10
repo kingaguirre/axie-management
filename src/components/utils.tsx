@@ -102,7 +102,7 @@ export const getCalculatedShare = (value: any) => {
   if (!!share) {
     return isManager(share) ? 0 : share;
   } else {
-    return getAvg(last_claim, in_game_slp) >= 125 ? 60 : 50;
+    return getAvg(last_claim, in_game_slp) >= 80 ? 60 : 50;
   }
 };
 
