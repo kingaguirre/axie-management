@@ -36,7 +36,12 @@ export default () => {
     Promise.all(
       DATA.map(item => fetchData(item))
     ).then((values) => {
-      setData(values);
+      setData(values.map(item => {
+        return {
+          ...item,
+          name: item.name.replace('<#000>', '').replace('<#FFAE42>', '')
+        }
+      }));
     });
   }, []);
 
