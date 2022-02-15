@@ -27,7 +27,7 @@ export default (props: any) => {
 
   const getShareIconColor = (avgLimit: number) => {
     const avg = getAvg(last_claim, in_game_slp);
-    return avg < 20 ? -1 : avg >= avgLimit ? 1 : 0;
+    return avg < 40 ? -1 : avg >= avgLimit ? 1 : 0;
   };
 
   const handleOnClick = (onInfoItemClick: any) => {
