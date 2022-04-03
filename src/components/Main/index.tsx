@@ -10,7 +10,8 @@ import { SLP_PRICE_API } from '../data';
 import * as SC from './styled';
 
 export const AppContext = createContext<any>(undefined);
-const AVG_LIMIT = 80;
+export const AVG_LIMIT = 60;
+export const AVG_LOWEST_LIMIT = 40;
 
 export default () => {
   const [data, setData] = useState<any>(undefined);
@@ -39,7 +40,7 @@ export default () => {
       setData(values.map(item => {
         return {
           ...item,
-          name: item.name.replace('<#000>', '').replace('<#FFAE42>', '')
+          name: !!item.name ? item.name.replace('<#000>', '').replace('<#FFAE42>', '') : 'No Name'
         }
       }));
     });

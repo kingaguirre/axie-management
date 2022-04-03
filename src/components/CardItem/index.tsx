@@ -15,6 +15,7 @@ import {
   getCalculatedShare,
 } from '../utils';
 import * as SC from './styled';
+import { AVG_LOWEST_LIMIT } from '../Main';
 
 export default (props: any) => {
   const { name, cache_last_updated, last_claim, total_slp, in_game_slp, mmr, share, rank, ronin } = props;
@@ -27,7 +28,7 @@ export default (props: any) => {
 
   const getShareIconColor = (avgLimit: number) => {
     const avg = getAvg(last_claim, in_game_slp);
-    return avg < 40 ? -1 : avg >= avgLimit ? 1 : 0;
+    return avg < AVG_LOWEST_LIMIT ? -1 : avg >= avgLimit ? 1 : 0;
   };
 
   const handleOnClick = (onInfoItemClick: any) => {

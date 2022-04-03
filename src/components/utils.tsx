@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+import { AVG_LIMIT } from './Main';
 export const PHP_PREFIX = '≈ ₱ ';
 
 export const numberWithCommas = (x: any) => {
@@ -102,7 +103,7 @@ export const getCalculatedShare = (value: any) => {
   if (!!share) {
     return isManager(share) ? 0 : share;
   } else {
-    return getAvg(last_claim, in_game_slp) >= 80 ? 60 : 50;
+    return getAvg(last_claim, in_game_slp) >= AVG_LIMIT ? 60 : 50;
   }
 };
 
